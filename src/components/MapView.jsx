@@ -29,12 +29,14 @@ function FlyToSelected({ parcel }) {
 
 export default function MapView({ parcels, selectedParcel, onSelectParcel }) {
   return (
-    <main className="flex-1 relative bg-slate-950">
+   <main className="flex-1 relative h-full w-full bg-slate-950">
       <MapContainer
-        center={[39.7912, -86.1284]}
-        zoom={12}
-        zoomControl={false}
-        className="w-full h-full z-10"
+  center={[39.7912, -86.1284]}
+  zoom={12}
+  zoomControl={false}
+  style={{ width: "100%", height: "100%", position: "absolute", inset: 0 }}
+  className="z-10"
+>
       >
         <TileLayer
           url={`https://api.mapbox.com/styles/v1/mapbox/dark-v11/tiles/{z}/{x}/{y}?access_token=${MAPBOX_TOKEN}`}
